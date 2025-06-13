@@ -33,12 +33,12 @@ void sum (double a, double b){
 
 void subtract (double a, double b){
     double r = a - b;
-    printf("Resultado: %.2lf + %.2lf = %.2lf\n", a, b, r);
+    printf("Resultado: %.2lf - %.2lf = %.2lf\n", a, b, r);
 }
 
 void multiply (double a, double b){
     double r = a * b;
-    printf("Resultado: %.2lf + %.2lf = %.2lf\n", a, b, r);
+    printf("Resultado: %.2lf x %.2lf = %.2lf\n", a, b, r);
 }
 
 void divide (double a, double b){
@@ -47,14 +47,14 @@ void divide (double a, double b){
         return;
     }
     double r = a / b;
-    printf("Resultado: %lf + %lf = %.2lf\n", a, b, r);
+    printf("Resultado: %lf / %lf = %.2lf\n", a, b, r);
 }
 
 int main()
 {
     int option = showMenu();
     while(option != 5){
-        if(option < 1 || option > 5){
+        if(option < 1 || option > 5 || option == EOF){
             printf("Opção inválida, coloque uma opção válida.\n");
             option = showMenu();
             continue;

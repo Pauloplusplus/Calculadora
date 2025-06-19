@@ -11,7 +11,7 @@ Code, Compile, Run and Debug online from anywhere in world.
 #include <ctype.h>
 
 int showMenu(){
-    int option;
+    char option;
     printf("===============================\n");
     printf("   Calculadora Simples\n");
     printf("===============================\n");
@@ -22,7 +22,7 @@ int showMenu(){
     printf("4. Divisão\n");
     printf("5. Sair\n");
     printf("Opção: ");
-    scanf("%d", &option);
+    scanf("%c", &option);
     return option;
 }
 
@@ -52,10 +52,11 @@ void divide (double a, double b){
 
 int main()
 {
-    int option = showMenu();
+    char cOp = showMenu();
+    int option = cOp - '0';
     while(option != 5){
         if(option < 1 || option > 5 || option == EOF){
-            printf("Opção inválida, coloque uma opção válida.\n");
+            printf("\nOpção inválida, coloque uma opção válida.\n");
             option = showMenu();
             continue;
         }

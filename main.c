@@ -71,6 +71,10 @@ int main() {
         char op;
         printf("Você deseja realizar outra operação? (s ou n): ");
         scanf(" %c", &op); // também usa espaço para ignorar o '\n'
+        while(tolower(op) != 's' && tolower(op) != 'n'){
+            printf("Resposta inválida, você quer realizar outra operação (s ou n): ");
+            scanf(" %c", &op);
+        }
 
         if(tolower(op) != 's') break;
         system("cls"); // limpa a tela (pode não funcionar no GDB online)
